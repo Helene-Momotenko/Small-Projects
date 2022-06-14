@@ -1,8 +1,33 @@
 import random
 
 num = random.randint(1, 100)
+print('Hi!')
+print()
 print('Welcome to number guessing game 🤔')
+print()
+name = input('What is your name, my friend? ')
+print()
+print(name + ', please, enter your number below...')
+print('⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️')
 count = 0
+
+
+def reset_data():
+    global num, count
+    num = random.randint(1, 100)
+    count = 0
+
+
+def is_play_again():
+    global name
+    while True:
+        try_again = input(name + ' do you want to play again? (Please, enter yes or no below) ')
+        if try_again == 'yes':
+            return True
+        elif try_again == 'no':
+            return False
+        else:
+            print('Only yes or no answers allowed! Please put your answer again!')
 
 
 def is_valid(n):
@@ -22,9 +47,14 @@ while True:
         elif n > num:
             print('Your number is higher 😮 than expected, please try again 😿')
         else:
-            print('You guessed it, congratulations!🎉')
-            break
+            print('You guessed it, congratulations! 🎉')
+            print('Your total number of attempts:', count)
+            answer = is_play_again()
+            if answer:
+                reset_data()
+                print('A new number has been generated. Try to guess it! 😜')
+            else:
+                break
     else:
         print('Please, enter an integer from 1 to 100? 🧐 ')
-print('Your total number of attempts:', count)
-print('Thanks for playing the number guessing game. 🌝 See you ...')
+print(name + ' thanks for playing the number guessing game. 🌝 See you ...')
