@@ -1,7 +1,8 @@
 import random
 
 num = random.randint(1, 100)
-print('Добро пожаловать в числовую угадайку')
+print('Welcome to number guessing game 🤔')
+count = 0
 
 
 def is_valid(n):
@@ -15,14 +16,15 @@ while True:
     n = input()
     if is_valid(n):
         n = int(n)
+        count += 1
         if n < num:
-            print('Ваше число меньше загаданного, попробуйте еще разок')
+            print('Your number is less 😔 than expected, please try again 😿')
         elif n > num:
-            print('Ваше число больше загаданного, попробуйте еще разок')
+            print('Your number is higher 😮 than expected, please try again 😿')
         else:
-            print('Вы угадали, поздравляем!')
+            print('You guessed it, congratulations!🎉')
             break
     else:
-        print('А может быть все-таки введем целое число от 1 до 100?')
-
-print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+        print('Please, enter an integer from 1 to 100? 🧐 ')
+print('Your total number of attempts:', count)
+print('Thanks for playing the number guessing game. 🌝 See you ...')
