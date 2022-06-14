@@ -5,7 +5,7 @@ print('Hi!')
 print()
 print('Welcome to number guessing game 🤔')
 print()
-name = input('What is your name, my friend? ')
+name = input('What is your name, my friend? ➡️ ')
 print()
 print(name + ', please, enter your number below...')
 print('⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️')
@@ -21,7 +21,7 @@ def reset_data():
 def is_play_again():
     global name
     while True:
-        try_again = input(name + ' do you want to play again? (Please, enter yes or no below) ')
+        try_again = input(name + ', do you want to play again? (Please, enter yes or no below) ')
         if try_again == 'yes':
             return True
         elif try_again == 'no':
@@ -48,7 +48,9 @@ while True:
             print('Your number is higher 😮 than expected, please try again 😿')
         else:
             print('You guessed it, congratulations! 🎉')
+            print()
             print('Your total number of attempts:', count)
+            print()
             answer = is_play_again()
             if answer:
                 reset_data()
@@ -57,4 +59,7 @@ while True:
                 break
     else:
         print('Please, enter an integer from 1 to 100? 🧐 ')
-print(name + ' thanks for playing the number guessing game. 🌝 See you ...')
+print()
+print('👾 👾 👾 👾 👾 👾')
+print(name + ', thanks for playing the number guessing game. 🌝 See you ...')
+print('👾 👾 👾 👾 👾 👾')
