@@ -21,7 +21,7 @@ def reset_data():
 def is_play_again():
     global name
     while True:
-        try_again = input(name + ', do you want to play again? (Please, enter yes or no below) ')
+        try_again = input(name + ', do you want to play again? (Please, enter yes or no below) ').lower()
         if try_again == 'yes':
             return True
         elif try_again == 'no':
